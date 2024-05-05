@@ -139,11 +139,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, Listener {
         easyWayLocation?.endUpdates()
 
 
-        val user = User(
-            id = authProvider.getId(),
-        )
-
-        userProvider.updateUserDisponible(user);
 
         if(myLocationLatLng != null){
             geoProvider.removeLocaton(authProvider.getId())
@@ -155,12 +150,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, Listener {
     private fun connectDriver(){
         easyWayLocation?.endUpdates()
         easyWayLocation?.startLocation()
-
-        val user = User(
-            id = authProvider.getId(),
-        )
-
-        userProvider.updateUserDisponible(user);
 
         showButtonDisconnect();
 
