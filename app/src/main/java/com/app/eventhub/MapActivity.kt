@@ -18,8 +18,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.app.eventhub.databinding.ActivityMainBinding
 import com.app.eventhub.databinding.ActivityMapBinding
+import com.app.eventhub.models.User
 import com.app.eventhub.providers.AuthProvider
 import com.app.eventhub.providers.GeoProvider
+import com.app.eventhub.providers.UserProvider
 import com.example.easywaylocation.EasyWayLocation
 import com.example.easywaylocation.Listener
 import com.google.android.gms.location.LocationRequest
@@ -40,6 +42,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, Listener {
 
     private lateinit var binding: ActivityMapBinding
     val authProvider = AuthProvider();
+    val userProvider = UserProvider();
 
     private var googleMap: GoogleMap? = null;
     var easyWayLocation: EasyWayLocation? = null;
@@ -134,15 +137,33 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, Listener {
 
     private fun disconnectDriver(){
         easyWayLocation?.endUpdates()
+
+
+        val user = User(
+            id = authProvider.getId(),
+        )
+
+        userProvider.updateUserDisponible(user);
+
         if(myLocationLatLng != null){
             geoProvider.removeLocaton(authProvider.getId())
             showButtonConnect()
         }
+
+
     }
     private fun connectDriver(){
         easyWayLocation?.endUpdates()
         easyWayLocation?.startLocation()
-        showButtonDisconnect()
+
+        val user = User(
+            id = authProvider.getId(),
+        )
+
+        userProvider.updateUserDisponible(user);
+
+        showButtonDisconnect();
+
 
     }
 

@@ -22,6 +22,14 @@ class UserProvider {
         return db.document(user.id!!).set(user)
     }
 
+    fun updateUserDisponible(user: User):Task<Void>{
+        val map: MutableMap<String, Any> = HashMap()
+        map["disponible"] = !user?.disponible!!
+
+        return db.document(user?.id!!).update(map)
+    }
+
+
     fun uploadImage(id:String, file: File): StorageTask<UploadTask.TaskSnapshot> {
         var fromfile = Uri.fromFile(file)
 

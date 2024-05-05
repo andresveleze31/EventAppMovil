@@ -10,7 +10,8 @@ data class User (
     val apellido: String? = null,
     val email: String? = null,
     val identification: String? = null,
-    var image: String? = null
+    var image: String? = null,
+    var disponible: Boolean?= false
 ) {
 
 
