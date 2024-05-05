@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Establece el color de fondo -->
+    <solid android:color="@color/white" />
+
+    <!-- Establece el radio del borde -->
+    <corners android:radius="50dp" /> <!-- Puedes ajustar el valor según tu preferencia -->
+
+    <!-- Añade un borde opcional -->
+
+</shape>

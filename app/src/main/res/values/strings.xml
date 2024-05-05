@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EventHub</string>
+
+
+    <string name="google_maps_key">AIzaSyBxBvr5hOLcZjWkEkwN3FfMAp_e_wwbj7c</string>
+
 </resources>

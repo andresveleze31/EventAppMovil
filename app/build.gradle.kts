@@ -52,6 +52,17 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore")
 
     implementation("com.google.firebase:firebase-storage-ktx")
+
+    implementation("com.google.maps.android:maps-ktx:3.2.0")
+    implementation("com.google.maps.android:maps-utils-ktx:3.2.0")
+    implementation("com.google.maps.android:android-maps-utils:2.2.3")
+
+    implementation("com.google.android.gms:play-services-maps:18.0.2")
+    implementation("com.google.android.gms:play-services-location:20.0.0")
+
+    implementation("com.github.prabhat1707:EasyWayLocation:2.4")
+    implementation("com.github.imperiumlabs:GeoFirestore-Android:v1.4.0")
+
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
     implementation("androidx.core:core-ktx:1.13.0")
